@@ -1,6 +1,11 @@
 <template>
   <div class="test">
-    <input v-model="todo" type="text" class="form-control me-4" />
+    <input
+      placeholder="Todo giriniz.."
+      v-model="todo"
+      type="text"
+      class="form-control me-4"
+    />
     <span class="addBtn">
       <button @click="handleSubmit" class="btn btn-primary mt-1">Ekle</button>
     </span>
@@ -17,7 +22,7 @@ export default {
   methods: {
     handleSubmit() {
       if (this.todo === "") {
-        alert("Alan boş eklenemez.");
+        alert("Bu alan boş bırakılamaz.");
       } else {
         this.$emit("new-item", this.todo);
         this.todo = "";
